@@ -2,7 +2,7 @@
 This is a one-day introduction to the p5js web programming framework for javascript. It is suitable for students with little or no programming experience. p5js is an excellent gateway way to learning programming. In the class we will breifly cover some necessary basics of HTML and Javascript to get up and running, but will primarily focus on the p5js environment for animation and interactivity. By the end of this class you will create your own interactive web page, and will have the tools to continue exploring and learning p5js on your own.
 
 * Why is it cool? 
-	* have a look at one of the more than 11 examples on [Open Processing](https://www.openprocessing.org/browse#) 
+	* have a look at one of the more than eleven-thousand examples on [Open Processing](https://www.openprocessing.org/browse#) 
 	* an inspiring [talk by Casey Reas](https://vimeo.com/45851523) (one of the creators of Processing)
 	* Here is a stupid game of [tictactoe](http://tictactoe.pink) that I made that works sometimes.
 * Who should take it?
