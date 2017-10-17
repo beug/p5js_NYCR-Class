@@ -1,18 +1,20 @@
 # Introduction to p5js 
 This is a one-day introduction to the p5js web programming framework for javascript. It is suitable for students with little or no programming experience. p5js is an excellent gateway way to learning programming. In the class we will breifly cover some necessary basics of HTML and Javascript to get up and running, but will primarily focus on the p5js environment for animation and interactivity. By the end of this class you will create your own interactive web page, and will have the tools to continue exploring and learning p5js on your own.
 
-* Why is it cool? (Do you have some neat things to link to?)
-	* https://codepen.io/winkerVSbecks/full/zgayr/
-	* 
+* Why is it cool? 
+	* have a look at one of the more than 11 examples on [Open Processing](https://www.openprocessing.org/browse#) 
+	* an inspiring [talk by Casey Reas](https://vimeo.com/45851523) (one of the creators of Processing)
+	* Here is a stupid game of [tictactoe](http://tictactoe.pink) that I made that works sometimes.
 * Who should take it?
-	* anyone interested in programming (is this too broad? – should I say you should have some familiarity with HTML? I want it to be accessible)
+	* anyone interested in learning programming (is this too broad? – should I say you should have some familiarity with HTML? I want it to be accessible)
+	* There will not be much math in this class, but it is expected that you have a working knowledge of Algebra or better, and a grasp of the [Cartesian Coordinate System](https://en.wikipedia.org/wiki/Cartesian_coordinate_system)
 * What materials will students need?
 	* You will need to bring your own laptop computer, and this should be equipped with the ability to join a WiFi network. NYC Resistor cannot provide extra laptops for this course. 
 
 ## Section 1: Preamble
 
 ### What is it
-p5js is framework that extends javascript for creating visual or interactive art in the browser
+p5js is framework that extends javascript for creating visual or interactive art in the browser. It is based on Processing... yada yada
 ### Javascript
 dafuq dat ish
 ### Cool projects!
@@ -53,6 +55,8 @@ DOM: Document Object Model
 </html>
 ```
 source: [W3schools](https://www.w3schools.com/html/)
+
+Further reading on [the DOM](https://github.com/processing/p5.js/wiki/Intro-to-DOM-manipulation-and-events)
 
 ### Loading in the browser
 
@@ -183,6 +187,8 @@ So we've defined our canvas as 640 pixels across the horizontal axis and 480 pix
 
 ## Section 4: Variables / Scope
 ### Variables
+Variables are a way that we can reserve a small part of a computer's memory to store data. We reserve a name for it in our program so that we can either refer back to it, and in some cases even modify it's value later on. 
+
 * __declarations__
   * var 
   * let
@@ -192,24 +198,57 @@ So we've defined our canvas as 640 pixels across the horizontal axis and 480 pix
   * int: can be any number, no decimals 
      * ``var x = 2;`` ``var year = 1984;`` 
      * ``let y = 5;`` ``let year = 300;`` 
-     * ``const z = 7;`` ``const my_favorite_number = 711;``
+     * ``const z = 26;`` ``const my_favorite_number = 711;``
   * float: can be any number, with decimal places ``var/let/const x = 23.97``
-  * string: can be any letter or phrase/characters
-     * ``var s = "a"`` ``let message = "Hello World!"``
+  * string: can be any letter/character or phrase/characters **Note the quotation marks around the contents when we declare strings below** 
+     * ``var s = "a"`` or  ``let message = "Hello World!"``
      * ``"<div id='my_div'>
         	  <p>Hello World!</p> 
         	  <p>My favorite color is green!</p>
-        	</div>"``	
+        	</div>"``
+     * tricky thing to note, is that a string can be a number: ``var s = "37"``	
   * arrays
 * __how the DOM intereperets__
 
 ### Scope of Declaration
 * __global scope__
+  *  When we declare a variable with global scope, that means we are giving every part of our program access to that variable. 
 * __local scope__
+
+### Bonus: Commenting out Code
+You may have noticed this a little already... any time two slashes are used, everything after it will be commented out.
+ 
+* ``//this is a comment`` it could also look like this: ``//var my_variable = 100;``
+* ``var my_variable = 400; //this is a comment that starts after valid code``
+* comments can also span multiple lines:
+
+```javascript
+var my_variable = "I am a string, not a comment!";
+
+/*  <-- begins a comment block
+   anything
+      in 
+        here 
+          is 
+            a
+              comment!  
+                nothing will get excecuted here.                 
+ends the comment --> */
+
+var my_other_variable = "I am totally variable!";
+
+```
 
 ## Section 5: Conditional If( ) / Then / Else statements
 
 ## Section 6: For( ) Loops
+
+```
+for(var i = 0; i < 10; i++){
+  //Do Something, maybe even with i...
+}
+```
+notice exception to the "var vs. let" rule. Use var inside for loop.
 
 ## Section 7: Handling Time
 ### delay( )
@@ -226,5 +265,12 @@ __Build something together__
 
  
 
+## Collection of Further Reading/Learning
 
+* [Watch this lunatic named Daniel Schiffman](https://vimeo.com/channels/learningp5js/) <-- he is actually really great
+* [Lauren McCarthy's Creative Javascript Class](https://github.com/lmccart/itp-creative-js)
+* [Allison Parrish's Class on p5.play](http://creative-coding.decontextualize.com/making-games-with-p5-play/)
+* [Gene Cogan's Examples](http://genekogan.com/code/p5js-transformations/)
+* [Robert Cook's physics tutorial](http://professorcook.org/CHAPphysics.pdf)
+* [another p5js class](https://github.com/futuremarc/p5-creative-coding-course#bitlycolabcoding)
 
