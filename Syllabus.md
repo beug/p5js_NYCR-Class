@@ -25,10 +25,15 @@ TODO: dafuq dat ish
 
 
 ## Section 2: Up and Running
-### Text Editor with syntax highlighting
-* [Atom](https://atom.io/) Free and open-source / works on Mac Linux Windows
-* [Sublime](https://www.sublimetext.com/) Free trial, then $80 / works on Mac Linux Windows
-* vim/emacs – the longstanding nerd war
+### Text Editor with syntax-highlighting
+Most operating systems come with a built in text-editor like textEdit(Mac) or notepad(windows), and most terminal applications come with Nano built in. Unfortunately these don't have things like syntax-highlighting or autocomplete that are very nice to have contextual features when learning to program. 
+
+* **[Sublime](https://www.sublimetext.com/) Free trial, then $80 / works on Mac Linux Windows (preferred option)**
+* Other Options:
+  * [Atom](https://atom.io/) Free and open-source / works on Mac Linux Windows
+  * [Brackets](http://brackets.io/)
+  * [BBEdit](https://www.barebones.com/products/bbedit/) Free version Mac only
+  * vim/emacs – the longstanding nerd war of CLI editors
 
 ### Filepath, Directory Structure & Filetypes
 * Users/path/to/your/folder/
@@ -40,11 +45,14 @@ TODO: dafuq dat ish
 HTML: Hyper Text Markup Language
 
 > Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript it forms a triad of cornerstone technologies for the World Wide Web.[2] Web browsers receive HTML documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document. 
->  - [Wikipdedia](https://en.wikipedia.org/wiki/HTML)
+>  
+> _- [Wikipdedia](https://en.wikipedia.org/wiki/HTML)_
 
 DOM: Document Object Model
 
-> The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+> The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document. 
+> 
+> _- [W3schools](https://www.w3schools.com/html/) (a great canonical source for web standards)_
 
 ```html
 <!DOCTYPE html>
@@ -83,16 +91,14 @@ Further reading on [the DOM](https://github.com/processing/p5.js/wiki/Intro-to-D
 ### 2.b: Javascript syntax in HTML context (in-line)
 ---
 Go back to our index.html file and add a new paragraph `<p>` tag with an id of "demo":
-`<p id="demo"></p>` inside the body tag
+`<p id="demo"></p>` inside the body tag. This is in-line javascript that is manupulating the content of HTML through the DOM tree.
 
 ```javascript
 <script>document.getElementById("demo").innerHTML = "Hello JavaScript!";</script>
 ```
-give it a try!
+source: [W3Schools](https://www.w3schools.com/js/js_intro.asp)
 
-This is in line javascript that is manupulating the content of HTML through the DOM tree
-
-your code should now look something like this:
+**Give it a try! your code might now look something like this:**
 
 ```html
 <!DOCTYPE html>
@@ -122,17 +128,17 @@ As I mentioned p5js is a set of tools that extends Javascript. In order to use t
 ```
 Add this line inside the ``<head></head>`` tags. This will tell our HTML page that we want to load it. Alternatively, you can download p5js into your directory and load it locally.
  
-* TODO: how to do that
+* TODO: add or link to how to do that
 * TODO: talk about the path
 
 
 ## Section 3: p5js! (FINALLY!)
-Language Reference: [https://p5js.org/reference](https://p5js.org/reference/)
+**Language Reference: [https://p5js.org/reference](https://p5js.org/reference/)** <-- this is the most important resource for learning p5js
 
 Programming Examples: [https://p5js.org/examples/](https://p5js.org/examples/)
 
 Tutorials:
-[Daniel Shiffman wiling out on Youtube](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
+[Daniel Shiffman wiling out on Youtube](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) <-- more like this at the end of the syllabus
 
 ### 3.a The Sketch
 ---
@@ -166,7 +172,7 @@ function draw(){
   </head>
   <body>
 
-    <script src="my_first_sketch.js">
+    <script src="my_first_sketch.js"></script>
 
   </body>
 </html>
@@ -238,9 +244,14 @@ function draw(){
 }
 ```
 
+### Shape Primatives
 Some of the other built in shapes that we can use to draw with:
 
-
+* TODO: add this section
+### Shape Attributes
+* TODO: add this section
+### More with Shapes
+* TODO: add this section (maybe omit)
 
 ### Now is probably a good time to talk about Axis
 
@@ -249,12 +260,23 @@ So we've defined our canvas as 640 pixels across the horizontal axis and 480 pix
 ### mouseX / mouseY
 * TODO: add this section
 
+### Now is probably a good time to talk about drawing the background()
+* TODO: add this section
+
 ### console.log()
 * TODO: add this section
 
+### Push Pop?
+
 ## Section 4: Variables / Scope
 ### Variables
-Variables are a way that we can reserve a small part of a computer's memory to store data. We reserve a name for it in our program so that we can either refer back to it, and in some cases even modify it's value later on. 
+Variables are a way that we can reserve a small part of a computer's memory to store data. We reserve a name for it in our program so that we can either refer back to it, and in some cases even modify it's value later on. TODO (make this section actually factual)
+
+> In computer programming, a variable or scalar is a storage location paired with an associated symbolic name (an identifier), which contains some known or unknown quantity of information referred to as a value. The variable name is the usual way to reference the stored value; this separation of name and content allows the name to be used independently of the exact information it represents. The identifier in computer source code can be bound to a value during run time, and the value of the variable may thus change during the course of program execution.
+>
+Variables in programming may not directly correspond to the concept of variables in mathematics. The value of a computing variable is not necessarily part of an equation or formula as in mathematics. In computing, a variable may be employed in a repetitive process — assigned a value in one place, then used elsewhere, then reassigned a new value and used again in the same way (see iteration). Variables in computer programming are frequently given long names to make them relatively descriptive of their use, whereas variables in mathematics often have terse, one- or two-character names for brevity in transcription and manipulation. _- [Wikipedia](https://en.wikipedia.org/wiki/Variable_(computer_science))_
+
+Because p5js is javascript, we get to use javascript syntax for declaring and using our variables. The current specification is  
 
 * __declarations__
   * var 
