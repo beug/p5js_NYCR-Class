@@ -196,10 +196,10 @@ So we've defined our canvas as 640 pixels across the horizontal axis and 480 pix
   * float: can be any number, with decimal places ``var/let/const x = 23.97``
   * string: can be any letter or phrase/characters
      * ``var s = "a"`` ``let message = "Hello World!"``
-     * ```"<div id='my_div'>
-        	  <p>Hello World,</p> 
+     * ``"<div id='my_div'>
+        	  <p>Hello World!</p> 
         	  <p>My favorite color is green!</p>
-        	</div>" ```	
+        	</div>"``	
   * arrays
 * __how the DOM intereperets__
 
