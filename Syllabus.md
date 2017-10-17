@@ -4,75 +4,126 @@
 ## Section 1: Preamble
 
 ### What is it
-p5js is framework that extends javascript for creating visual or interactive art in the browser. It is based on Processing... yada yada
+p5js is a web framework that extends javascript for creating visual or interactive art in the browser. It is based on Processing, which is written in Java... 
+
+**from [processing.org](https://processing.org):**
+> Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology. There are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning and prototyping.
+> 
+
+**from [p5js.org](https://p5js.org/):**
+
+> p5.js is a JavaScript library that starts with the original goal of Processing, to make coding accessible for artists, designers, educators, and beginners, and reinterprets this for today's web.
+>
+Using the original metaphor of a software sketchbook, p5.js has a full set of drawing functionality. However, you're not limited to your drawing canvas, you can think of your whole browser page as your sketch! For this, p5.js has addon libraries that make it easy to interact with other HTML5 objects, including text, input, video, webcam, and sound. 
+>
+p5.js is a new interpretation, not an emulation or port, and it is in active development. An official editing environment is coming soon, as well as many more features!
+
+There are other frameworks like [Three.js](https://threejs.org/), [D3](https://d3js.org/), or [Paper.js](http://paperjs.org/) that also put visual creativity at the forefront, albeit each have a fundamentally different style of coding. We won't cover any of these today, but it is good to know that they exist.
+
 ### Javascript
-dafuq dat ish
-### Cool projects!
-...
+TODO: dafuq dat ish
+
 
 ## Section 2: Up and Running
 ### Text Editor with syntax highlighting
-* [Atom](https://atom.io/)
-* [Sublime](https://www.sublimetext.com/) Mac Linux Windows
-* vim/emacs – The longstanding nerd war
+* [Atom](https://atom.io/) Free and open-source / works on Mac Linux Windows
+* [Sublime](https://www.sublimetext.com/) Free trial, then $80 / works on Mac Linux Windows
+* vim/emacs – the longstanding nerd war
 
 ### Filepath, Directory Structure & Filetypes
 * Users/path/to/your/folder/
 * index.html
 * file.js
 
-### HTML & The DOM
+### 2.a: HTML & The DOM
 ---
 HTML: Hyper Text Markup Language
 
+> Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript it forms a triad of cornerstone technologies for the World Wide Web.[2] Web browsers receive HTML documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document. 
+>  - [Wikipdedia](https://en.wikipedia.org/wiki/HTML)
+
 DOM: Document Object Model
 
-"The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
+> The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
 
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
 
-</body>
+  </body>
 </html>
 ```
 source: [W3schools](https://www.w3schools.com/html/)
 
-Further reading on [the DOM](https://github.com/processing/p5.js/wiki/Intro-to-DOM-manipulation-and-events)
+Further reading on [the DOM](https://github.com/processing/p5.js/wiki/Intro-to-DOM-manipulation-and-events) as it relates to p5js
 
 ### Loading in the browser
 
-* copy and paste the above code into your index.html file and save it
-* open your browser
-* `file://Users/path/to/your/folder/index.html`
+1. copy and paste the above code into your index.html file and save it
+2. find the path to this file
+* open the browser of your choice
+* paste or type the full path as the URL starting with: `file://Users/path/to/your/folder/index.html`
+* OPTIONAL: Start a local server on your computer:
+  * [Instructions for Mac / Windows / Linux](https://github.com/processing/p5.js/wiki/Local-server)
+  * ^^ this may be too time consuming for class 
 
-### Javascript syntax in HTML context (in-line)
-add a new paragraph `<p>` tag with an id of "demo":
+### Play Around
+
+1. Try changing the text between the title tags``<title>Page Title</title>`` and see what happens.
+2. Try adding a new heading or paragraph to your HTML document.
+3. Each time you make a change, save your file and refresh your browser.
+
+### 2.b: Javascript syntax in HTML context (in-line)
+---
+Go back to our index.html file and add a new paragraph `<p>` tag with an id of "demo":
 `<p id="demo"></p>` inside the body tag
-
 
 ```javascript
 <script>document.getElementById("demo").innerHTML = "Hello JavaScript!";</script>
 ```
 give it a try!
 
-
 This is in line javascript that is manupulating the content of HTML through the DOM tree
 
-### Loading external files into your HTML
+your code should now look something like this:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <p id="demo">
+      <script>document.getElementById("demo").innerHTML = "Hello JavaScript!";</script>
+    </p>
+
+  </body>
+</html>
+
+```
+
+### 2.c Loading external files into your HTML
+---
+As I mentioned p5js is a set of tools that extends Javascript. In order to use these new tools them we need to tell our HTML page that we want to use them. We can do that by embedding an external script into our page.
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.15/p5.js"></script>
 ```
-
-* talk about the path
+Add this line inside the ``<head></head>`` tags. This will tell our HTML page that we want to load it. Alternatively, you can download p5js into your directory and load it locally.
+ 
+* TODO: how to do that
+* TODO: talk about the path
 
 
 ## Section 3: p5js! (FINALLY!)
@@ -83,14 +134,17 @@ Programming Examples: [https://p5js.org/examples/](https://p5js.org/examples/)
 Tutorials:
 [Daniel Shiffman wiling out on Youtube](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
 
-###sketch
+### 3.a The Sketch
+---
 A long standing tradition in the "Processing" ecosystem is the idea that a program is called a "sketch" 
 
 A sketch consists of a few basic functions that almost always need to be present. The syntax is javascript, but these conventions actually come from Processing which is based in JAVA (which for reasons no one can explan, has NOTHING to do with javascript)
 
 When we load the p5js framwork into our DOM context, we "extend" javascript to do a bunch of new magical things for us. While we can still write normal javascript, we can also add a sketch (possibly multiple sketches) to the DOM and access some of the magic.
 
-almost every p5js sketch ever will contain these two functions:
+1. To start let's create a new file, called anything you like (e.g. ``my_first_sketch.js``) make sure you use the extension **.js** at the end of the file. 
+
+2. almost every p5js sketch ever will contain these two functions (add them to your file and save):
 
 ```javascript
 function setup(){
@@ -100,6 +154,22 @@ function setup(){
 function draw(){
 
 }
+```
+ * 3. Now we need to tell our HTML file about this new script we've made: 
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Sketch</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.15/p5.js"></script>
+  </head>
+  <body>
+
+    <script src="my_first_sketch.js">
+
+  </body>
+</html>
 
 ```
 
@@ -152,10 +222,11 @@ function draw(){
 
 }
 ```
-talk about semi-colon
+* TODO: talk about semi-colon
 
-### I guess we should probably draw something
-There are a number of built in shape functions, let's start with everyone's favorite, the [``ellipse()``](https://p5js.org/reference/#/p5/ellipse) which, like all the other things we've seen so far in p5js is a function, and like createCanvas it has already been declared in our framework file and it also takes four arguments: x location, y location, width, and height. 
+### 3.b: OMG can we draw something already, Eric!?!
+---
+There are a number of built in shape functions, let's start with a favorite, the [``ellipse()``](https://p5js.org/reference/#/p5/ellipse) which, like all the other things we've seen so far in p5js is a function, and like createCanvas it has already been declared in our framework file and it also takes four arguments: x location, y location, width, and height. 
 
 ```javascript
 function setup(){
@@ -166,13 +237,20 @@ function draw(){
   ellipse(200, 200, 100, 100);
 }
 ```
+
+Some of the other built in shapes that we can use to draw with:
+
+
+
 ### Now is probably a good time to talk about Axis
 
-So we've defined our canvas as 640 pixels across the horizontal axis and 480 pixels on the vertical axis. So now we have a grid of 307,200 pixels – each one with their own unique address. Just like in math class when you were a kid and learned about graphs with an x and y axis, our canvas is now like that, except 0,0 is the top left corner, and any number above zero on either 
+So we've defined our canvas as 640 pixels across the horizontal axis and 480 pixels on the vertical axis. So now we have a grid of 307,200 pixels – each one with their own unique address. Just like in math class when you were a kid and learned about graphs with an x and y axis, our canvas is now like that, except 0,0 is the top left corner, and any number above zero on either brings us into the canvas. On the vice versa, negative numbers will move you off-screen 📺 (this can be handy sometimes).
 
 ### mouseX / mouseY
+* TODO: add this section
 
 ### console.log()
+* TODO: add this section
 
 ## Section 4: Variables / Scope
 ### Variables
@@ -241,16 +319,24 @@ notice exception to the "var vs. let" rule. Use var inside for loop.
 
 ## Section 7: Handling Time
 ### delay( )
+* TODO: add this section
+* The usual warnings about delay...
+
 ### millis( )
+* TODO: add this section
+* add logic to our program instead of delay() - is this too complicated for an intro class?
+
 ### systemTime( )
+* TODO: add this section (maybe this one isn't that important actually)
 
 ## Section 8: The Internet / Data Source
+* TODO: Possibly optional section
 
 ## Section 9: Write our own function!
-__choose some good examples from Reference__
+TODO: __choose some good examples from Reference__
 
 ## Section 10: Go buck wild
-__Build something together__ 
+TODO: __Build something together__ 
 
  
 
@@ -261,5 +347,5 @@ __Build something together__
 * [Allison Parrish's Class on p5.play](http://creative-coding.decontextualize.com/making-games-with-p5-play/)
 * [Gene Cogan's Examples](http://genekogan.com/code/p5js-transformations/)
 * [Robert Cook's physics tutorial](http://professorcook.org/CHAPphysics.pdf)
-* [another p5js class](https://github.com/futuremarc/p5-creative-coding-course#bitlycolabcoding)
+* a seemingly endless supply of resources from the [p5js github wiki](https://github.com/processing/p5.js/wiki/Education)
 
