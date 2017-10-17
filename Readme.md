@@ -1,4 +1,4 @@
-#Introduction to p5js 
+# Introduction to p5js 
 This is a one-day introduction to the p5js web programming framework for javascript. It is suitable for students with little or no programming experience. p5js is an excellent gateway way to learning programming. In the class we will breifly cover some necessary basics of HTML and Javascript to get up and running, but will primarily focus on the p5js environment for animation and interactivity. By the end of this class you will create your own interactive web page, and will have the tools to continue exploring and learning p5js on your own.
 
 * Why is it cool? (Do you have some neat things to link to?)
@@ -9,28 +9,28 @@ This is a one-day introduction to the p5js web programming framework for javascr
 * What materials will students need?
 	* You will need to bring your own laptop computer, and this should be equipped with the ability to join a WiFi network. NYC Resistor cannot provide extra laptops for this course. 
 
-##Section 1: Preamble
+## Section 1: Preamble
 
-###What is it
+### What is it
 p5js is framework that extends javascript for creating visual or interactive art in the browser
-###Javascript
+### Javascript
 dafuq dat ish
-###Cool projects!
+### Cool projects!
 ...
 
-##Section 2: Up and Running
-###Text Editor with syntax highlighting
+## Section 2: Up and Running
+### Text Editor with syntax highlighting
 * Atom
 * Sublime 
 * textWrangler
 * vim/emacs
 
-###Filepath, Directory Structure & Filetypes
+### Filepath, Directory Structure & Filetypes
 * Users/path/to/your/folder/
 * index.html
 * file.js
 
-###HTML & The DOM
+### HTML & The DOM
 ---
 HTML: Hyper Text Markup Language
 
@@ -54,13 +54,13 @@ DOM: Document Object Model
 ```
 source: [W3schools](https://www.w3schools.com/html/)
 
-###Loading in the browser
+### Loading in the browser
 
 * copy and paste the above code into your index.html file and save it
 * open your browser
 * `file://Users/path/to/your/folder/index.html`
 
-###Javascript syntax in HTML context (in-line)
+### Javascript syntax in HTML context (in-line)
 add a new paragraph `<p>` tag with an id of "demo":
 `<p id="demo"></p>` inside the body tag
 
@@ -73,7 +73,7 @@ give it a try!
 
 This is in line javascript that is manupulating the content of HTML through the DOM tree
 
-###Loading external files into your HTML
+### Loading external files into your HTML
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.15/p5.js"></script>
@@ -82,7 +82,7 @@ This is in line javascript that is manupulating the content of HTML through the 
 * talk about the path
 
 
-##Section 3: p5js! (FINALLY!)
+## Section 3: p5js! (FINALLY!)
 Language Reference: [https://p5js.org/reference](https://p5js.org/reference/)
 
 Programming Examples: [https://p5js.org/examples/](https://p5js.org/examples/)
@@ -110,7 +110,7 @@ function draw(){
 
 ```
 
-###setup()
+### setup()
 This code gets excecuted sequentially (line by line) exactly one time. When it has finished excecuting every line between the curly braces, it moves on to ``draw() ``
 
 ```javascript
@@ -120,7 +120,7 @@ function setup(){
 ```
 When it has finished excecuting every line between the curly braces, it moves on to ``draw()`` where it will stay (most of the time forever)
 
-###draw()
+### draw()
 ```javascript
 function draw(){
   //the bulk of your code gets executed here, rinse repeat
@@ -129,7 +129,7 @@ function draw(){
 ```
 Once draw is called, it excecutes the code 
 
-###Structure
+### Structure
 
 When we start a line with the word ``function`` we are declaring to javascript that what that comes next is going to be a set of commands to follow. The syntax has a few components. ``function`` is the declaration, then it needs a name – functions can have any name you give them, (but ``setup`` and ``draw`` are kind of special). Then the parentheses which is where normally you can supply arguments, but in these two cases there are none – more on that later. And then finally curly braces. 
 
@@ -139,7 +139,7 @@ When we start a line with the word ``function`` we are declaring to javascript t
 | function      |      draw        | none        | code                   |
 
 
-###Canvas
+### Canvas
 By default, a p5js sketch will add a canvas element the body of our HTML. Unfortunately it's not very generous with canvas and defaults to 100 pixels x 100 pixels.
 
 We can specify a few things in our setup function if we know them in advance. For example, if we know that we want our sketch to have a workspace of 640x480 pixels we can **call** the [``createCanvas()``](https://p5js.org/reference/#/p5/createCanvas) function as a line of code during our setup function. Like ``setup()`` and ``draw()``, ``createCanvas()`` is a function but it was already declared when we loaded the framework. So, unlike these other two, it **DOES** take arguments and then instead of declaring it, we execute it.
@@ -161,7 +161,7 @@ function draw(){
 ```
 talk about semi-colon
 
-###I guess we should probably draw something
+### I guess we should probably draw something
 There are a number of built in shape functions, let's start with everyone's favorite, the [``ellipse()``](https://p5js.org/reference/#/p5/ellipse) which, like all the other things we've seen so far in p5js is a function, and like createCanvas it has already been declared in our framework file and it also takes four arguments: x location, y location, width, and height. 
 
 ```javascript
@@ -173,16 +173,16 @@ function draw(){
   ellipse(200, 200, 100, 100);
 }
 ```
-###Now is probably a good time to talk about Axis
+### Now is probably a good time to talk about Axis
 
 So we've defined our canvas as 640 pixels across the horizontal axis and 480 pixels on the vertical axis. So now we have a grid of 307,200 pixels – each one with their own unique address. Just like in math class when you were a kid and learned about graphs with an x and y axis, our canvas is now like that, except 0,0 is the top left corner, and any number above zero on either 
 
-###mouseX / mouseY
+### mouseX / mouseY
 
-###console.log()
+### console.log()
 
-##Section 4: Variables / Scope
-###Variables
+## Section 4: Variables / Scope
+### Variables
 * __declarations__
   * var 
   * let
@@ -203,25 +203,25 @@ So we've defined our canvas as 640 pixels across the horizontal axis and 480 pix
   * arrays
 * __how the DOM intereperets__
 
-###Scope of Declaration
+### Scope of Declaration
 * __global scope__
 * __local scope__
 
-##Section 5: Conditional If( ) / Then / Else statements
+## Section 5: Conditional If( ) / Then / Else statements
 
-##Section 6: For( ) Loops
+## Section 6: For( ) Loops
 
-##Section 7: Handling Time
-###delay( )
-###millis( )
-###systemTime( )
+## Section 7: Handling Time
+### delay( )
+### millis( )
+### systemTime( )
 
-##Section 8: The Internet / Data Source
+## Section 8: The Internet / Data Source
 
-##Section 9: Write our own function!
+## Section 9: Write our own function!
 __choose some good examples from Reference__
 
-##Section 10: Go buck wild
+## Section 10: Go buck wild
 __Build something together__ 
 
  
