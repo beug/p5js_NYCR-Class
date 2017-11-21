@@ -8,15 +8,14 @@ p5js is a web framework that extends javascript for creating visual or interacti
 
 **from [processing.org](https://processing.org):**
 > Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology. There are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning and prototyping.
-> 
 
 **from [p5js.org](https://p5js.org/):**
 
 > p5.js is a JavaScript library that starts with the original goal of Processing, to make coding accessible for artists, designers, educators, and beginners, and reinterprets this for today's web.
->
-Using the original metaphor of a software sketchbook, p5.js has a full set of drawing functionality. However, you're not limited to your drawing canvas, you can think of your whole browser page as your sketch! For this, p5.js has addon libraries that make it easy to interact with other HTML5 objects, including text, input, video, webcam, and sound. 
->
-p5.js is a new interpretation, not an emulation or port, and it is in active development. An official editing environment is coming soon, as well as many more features!
+
+>Using the original metaphor of a software sketchbook, p5.js has a full set of drawing functionality. However, you're not limited to your drawing canvas, you can think of your whole browser page as your sketch! For this, p5.js has addon libraries that make it easy to interact with other HTML5 objects, including text, input, video, webcam, and sound. 
+
+>p5.js is a new interpretation, not an emulation or port, and it is in active development. An official editing environment is coming soon, as well as many more features!
 
 There are other frameworks like [Three.js](https://threejs.org/), [D3](https://d3js.org/), or [Paper.js](http://paperjs.org/) that also put visual creativity at the forefront, albeit each have a fundamentally different style of coding. We won't cover any of these today, but it is good to know that they exist.
 
@@ -119,7 +118,14 @@ source: [W3Schools](https://www.w3schools.com/js/js_intro.asp)
 
 ```
 
-### 2.c Loading external files into your HTML
+**Takeaway:**
+
+* We put some javascript code in our HTML code. 
+* The code "excecuted" because we referenced it between ``<script> </script>`` tags (this is what our browser does with scripts – it loads them as a program to run) 
+* We used javascript to dynamically change our otherwise static web page. 
+
+
+### 2.c Loading external files (or scripts) into your HTML
 ---
 As I mentioned p5js is a set of tools that extends Javascript. In order to use these new tools them we need to tell our HTML page that we want to use them. We can do that by embedding an external script into our page.
 
@@ -131,20 +137,28 @@ Add this line inside the ``<head></head>`` tags. This will tell our HTML page th
 * TODO: add or link to how to do that
 * TODO: talk about the path
 
+**Food for thought:**
+
+Something to think about is that this doesn't seem to change anything about our page, but actually it does. By including this file we've made all of the magical functionality of p5js available to our browser.
 
 ## Section 3: p5js! (FINALLY!)
-**Language Reference: [https://p5js.org/reference](https://p5js.org/reference/)** <-- this is the most important resource for learning p5js
+**Language Reference: [https://p5js.org/reference](https://p5js.org/reference/)** <-- this is the most important resource for learning p5js. So important in fact, you will probably whitness me having to look stuff up in here during this class!
 
 Programming Examples: [https://p5js.org/examples/](https://p5js.org/examples/)
 
 Tutorials:
-[Daniel Shiffman wiling out on Youtube](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) <-- more like this at the end of the syllabus
+[Daniel Shiffman wiling out on Youtube](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) <-- more resources like this at the end of the syllabus
 
 ### 3.a The Sketch
 ---
 A long standing tradition in the "Processing" ecosystem is the idea that a program is called a "sketch" 
 
-A sketch consists of a few basic functions that almost always need to be present. The syntax is javascript, but these conventions actually come from Processing which is based in JAVA (which for reasons no one can explan, has NOTHING to do with javascript)
+A sketch consists of a few basic functions that almost always need to be present. The syntax is still just like javascript, but these conventions actually come from Processing which is based in JAVA (which for reasons no one can explan, has little or NOTHING to do with javascript). There is probably a joke to be made here about computer programmers either liking coffee or Indonesia.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=WTto0CWwDVo
+" target="_blank"><img src="http://img.youtube.com/vi/WTto0CWwDVo/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="640" height="480" border="0" /></a>
+
 
 When we load the p5js framwork into our DOM context, we "extend" javascript to do a bunch of new magical things for us. While we can still write normal javascript, we can also add a sketch (possibly multiple sketches) to the DOM and access some of the magic.
 
@@ -211,13 +225,13 @@ When we start a line with the word ``function`` we are declaring to javascript t
 ### Canvas
 By default, a p5js sketch will add a canvas element the body of our HTML. Unfortunately it's not very generous with canvas and defaults to 100 pixels x 100 pixels.
 
-We can specify a few things in our setup function if we know them in advance. For example, if we know that we want our sketch to have a workspace of 640x480 pixels we can **call** the [``createCanvas()``](https://p5js.org/reference/#/p5/createCanvas) function as a line of code during our setup function. Like ``setup()`` and ``draw()``, ``createCanvas()`` is a function but it was already declared when we loaded the framework. So, unlike these other two, it **DOES** take arguments and then instead of declaring it, we execute it.
+We can specify a few things in our setup function if we know them in advance. For example, if we know that we want our sketch to have a workspace of 640x480 pixels we can **call** the [``createCanvas()``](https://p5js.org/reference/#/p5/createCanvas) function as a line of code during our setup function. Like ``setup()`` and ``draw()``, ``createCanvas()`` is a function but it was already declared when we loaded the framework into our html page. So, unlike these previously discussed built-in functions,  ``createCanvas()`` **DOES** take arguments and since it has already been defined in the p5js framework, instead of declaring it, we execute it.
 
 | Name of function |( arguments )| 
 |------------------|-------------|
 | createCanvas	  | (width, height, renderer);|
 
-width and height are required, renderer is optional, but lets put it in for good measure. There canvas has two renderers available, P2D for 2-dimensional artwork, and WEBGL for 3-dimensional artwork. Let's start with P2D for now...
+width and height are required, renderer is optional, but let's choose one and put it in for good measure. There canvas has two renderers available, P2D for 2-dimensional artwork, and WEBGL for 3-dimensional artwork. Let's start with P2D for now...
 
 ```javascript
 function setup(){
@@ -230,9 +244,13 @@ function draw(){
 ```
 * TODO: talk about semi-colon
 
-### 3.b: OMG can we draw something already, Eric!?!
+### 3.b: OMG can we plz draw something already, Eric!?!
 ---
-There are a number of built in shape functions, let's start with a favorite, the [``ellipse()``](https://p5js.org/reference/#/p5/ellipse) which, like all the other things we've seen so far in p5js is a function, and like createCanvas it has already been declared in our framework file and it also takes four arguments: x location, y location, width, and height. 
+There are a number of built in shape functions, let's start with an old favorite, the [``ellipse()``](https://p5js.org/reference/#/p5/ellipse) which, like all the other things we've seen so far in p5js is a function, and like createCanvas it has already been declared in our framework file and it also takes four arguments: x location, y location, width, and height. 
+
+| Name of function |( arguments )| 
+|------------------|-------------|
+| ellipse	  | (x location, y location, width, height);|
 
 ```javascript
 function setup(){
