@@ -1,4 +1,4 @@
-# Introduction to p5*js! 
+# <span style="color:pink">Introduction to p5<sub>*</sub>js!</span> 
 
 <img src="img/class_flyer.gif" width="890">
 
