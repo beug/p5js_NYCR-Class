@@ -15,3 +15,6 @@ This is a one-day introduction to the p5js web programming framework for javascr
 * What materials will students need?
 	* You will need to bring your own laptop computer, and this should be equipped with the ability to join a WiFi network. NYC Resistor cannot provide extra laptops for this course. 
 
+---
+
+**Press onward to the [course syllabus...](Syllabus.md)**
