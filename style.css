@@ -1,0 +1,8 @@
+body {
+	background: lightgrey;
+	color: blue;
+}
+
+h1 {
+	text-shadow: 5px 5px 8px #000;
+}

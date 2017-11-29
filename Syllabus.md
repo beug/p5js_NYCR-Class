@@ -20,7 +20,11 @@ p5js is a web framework that extends javascript for creating visual or interacti
 There are other frameworks like [Three.js](https://threejs.org/), [D3](https://d3js.org/), or [Paper.js](http://paperjs.org/) that also put visual creativity at the forefront, albeit each have a fundamentally different style of coding. We won't cover any of these today, but it is good to know that they exist.
 
 ### Javascript
-TODO: dafuq dat ish
+
+Javascript is the language used to write the interactive parts of websites.
+
+You put your content in HTML.  You describe how it should look (colors, highlighting, positioning, etc.) with CSS.  And javascript provides the final piece, describing what happens when the user clicks and types at your web page.
+
 
 
 ## Section 2: Up and Running
@@ -283,6 +287,20 @@ So we've defined our canvas as 640 pixels across the horizontal axis and 480 pix
 
 ### console.log()
 * TODO: add this section
+
+### Full Page Canvas as Background
+
+To create a canvas that fills your webpage and stays in the background, add this to your code:
+
+```javascript
+let canvas;  // declare canvas globally so you can use it everywhere
+
+function setup() {
+	canvas = createCanvas(windowWidth, windowHeight);
+	canvas.position(0,0);           // put the canvas at the top
+	canvas.style('z-index', '-1');  // put it behind the page content
+}
+```
 
 ### Push Pop?
 
