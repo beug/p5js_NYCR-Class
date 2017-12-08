@@ -17,4 +17,4 @@ This is a one-day introduction to the p5js web programming framework for javascr
 
 ---
 
-**Press onward to the [course syllabus...](/wiki)**
+**Press onward to the [course syllabus...](../../wiki)**
