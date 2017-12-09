@@ -7,7 +7,6 @@ function setup(){
 }
 
 function draw(){
-  let y = "some other thing";
   console.log("x = " + x);
   console.log("y = " + y);
   console.log("z = " + z);

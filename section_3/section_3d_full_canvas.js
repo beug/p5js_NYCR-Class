@@ -2,6 +2,7 @@ var canvas;  // declare canvas globally so you can use it everywhere
 var x = 1; 
 var rect_width = 50;
 var rect_height = 50;
+var my_string = "how many licks does it take to get to the center of the earth?";
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
@@ -26,6 +27,14 @@ function draw() {
     stroke(200,255,0);
     strokeWeight(20);
     ellipse(mouseX, mouseY, 100, 100);
+  pop();
+    
+  push();
+    textSize(100);
+    fill(50, 150, 255);
+    translate(width/2+mouseX-width/2, height/2);    
+    rotate(frameCount * 0.01);
+    text(my_string, -400, -400, 800, 800);
   pop();
     
   x++;
