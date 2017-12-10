@@ -1,3 +1,6 @@
+//write our own function!
+
+
 function setup() { 
     //code 
 }
@@ -5,3 +8,4 @@ function setup() {
 function draw() {
     //more code
 }
+
